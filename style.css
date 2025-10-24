@@ -21,8 +21,9 @@
 	--soft-gray: #9CA3AF;
 	--white: #F9FAFB;
 	--neon-green: #10B981;
+	--light-gray: #D1D5DB; /* Lighter gray for subtle accent */
 
-	--accent: var(--electric-blue); /* Set accent to electric blue */
+	--accent: var(--light-gray); /* Set accent to light gray for subtlety */
 }
 *, ::before, ::after {
 	padding: 0;
@@ -87,7 +88,7 @@ body {
 	background: var(--primary-dark); /* Use primary dark for card background */
 	color: var(--soft-gray);
 	background-clip: padding-box; 
-	border: .2rem solid transparent;
+	border: .1rem solid transparent; /* Thinner border */
 	border-radius: var(--border-radius);
 	padding: 2rem 3rem;
 	margin: 1rem;
@@ -101,7 +102,7 @@ body {
 .card::before {
 	content: "";
 	position: absolute;
-	inset: -.2rem;
+	inset: -.1rem; /* Match the thinner border */
 	background: conic-gradient(
 		from calc(125deg + var(--deg, 0deg)),
 		var(--soft-gray),
@@ -116,12 +117,12 @@ body {
 .card::after {
 	content: "";
 	position: absolute;
-	inset: -.2rem;
+	inset: -.1rem; /* Match the thinner border */
 	background: #0003;
 	z-index: -2;
 	transform: translate(
-		calc(cos(var(--deg, 0deg)) * -1.5rem),
-		calc(sin(var(--deg, 0deg)) * -1.5rem)
+		calc(cos(var(--deg, 0deg)) * -1rem), /* Reduced shadow offset */
+		calc(sin(var(--deg, 0deg)) * -1rem)
 	)
 		scale(calc(var(--distance, 0) / 10 + 1));
 	border-radius: var(--border-radius);
