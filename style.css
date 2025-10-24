@@ -148,8 +148,8 @@ body {
 }
 
 .cta-primary:hover {
-    background-color: var(--soft-gray); /* Darker gray for better readability */
-    color: var(--white); /* Ensure text stays readable */
+    background-color: var(--electric-blue); /* Slightly darker blue for hover */
+    opacity: 0.9; /* Subtle darkening effect */
 }
 
 .cta-secondary {
@@ -159,8 +159,9 @@ body {
 }
 
 .cta-secondary:hover {
-    background-color: var(--soft-gray); /* Darker gray for better readability */
-    color: var(--white); /* Ensure text stays readable */
+    background-color: var(--electric-blue); /* Blue hover for secondary button too */
+    color: var(--white);
+    border-color: var(--electric-blue);
 }
 
 h1 {
