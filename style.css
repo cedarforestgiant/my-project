@@ -159,6 +159,8 @@ body {
 }
 
 h1 {
+    display: flex;
+    align-items: center;
 	padding-bottom: 1rem;
 	line-height: 1.8rem;
 	text-wrap: balance;
@@ -170,9 +172,15 @@ h1 {
 .feature-content h2 svg {
     width: 1.2em; /* Adjust size relative to font-size */
     height: 1.2em;
-    vertical-align: middle; /* Align icon with text */
+    vertical-align: bottom; /* Align icon with text */
     margin-right: 8px; /* Space between icon and text */
 }
+
+
+
+
+
+
 
 ::selection {
 	background: var(--accent);
@@ -227,6 +235,8 @@ h1 {
 }
 
 .feature-content h2 {
+    display: flex;
+    align-items: center;
     font-size: 2em;
     color: var(--soft-gray);
     margin-bottom: 10px;
