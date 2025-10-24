@@ -119,7 +119,16 @@
                 <button class="cta-primary">Install Multi</button>
             </div>
         </div>
+        
+        <!-- Debug timestamp -->
+        <div style="text-align: center; padding: 20px; color: #666; font-size: 12px; border-top: 1px solid #333;">
+            Last updated: <span id="timestamp"></span>
+        </div>
     </div>
     <script src="script.js"></script>
+    <script>
+        // Add timestamp for debugging
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+    </script>
 </body>
 </html>
