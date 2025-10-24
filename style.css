@@ -148,7 +148,8 @@ body {
 }
 
 .cta-primary:hover {
-    background-color: var(--light-gray); /* More consistent with subtle design */
+    background-color: var(--soft-gray); /* Darker gray for better readability */
+    color: var(--white); /* Ensure text stays readable */
 }
 
 .cta-secondary {
@@ -158,7 +159,8 @@ body {
 }
 
 .cta-secondary:hover {
-    background-color: var(--light-gray); /* More consistent with subtle design */
+    background-color: var(--soft-gray); /* Darker gray for better readability */
+    color: var(--white); /* Ensure text stays readable */
 }
 
 h1 {
