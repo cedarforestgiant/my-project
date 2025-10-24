@@ -35,8 +35,11 @@ body {
 	color: var(--white); /* Default text color */
 	font-family: 'Inter', sans-serif; /* Apply Inter font */
 	font-weight: 400; /* Default font weight */
-	text-wrap: pretty;
+    word-wrap: break-word; /* Ensure text wraps */
+    overflow-wrap: break-word; /* Modern equivalent */
     letter-spacing: -0.02em; /* Tighter letter spacing */
+    -webkit-font-smoothing: antialiased; /* Better font rendering */
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-section {
@@ -48,14 +51,14 @@ body {
     margin-bottom: 40px;
 }
 
+
+
 .headline {
-    font-size: 3em;
     margin-bottom: 10px;
     font-weight: 700; /* Apply bold weight */
 }
 
 .subheader {
-    font-size: 1.2em;
     color: var(--soft-gray);
     margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
@@ -70,10 +73,6 @@ body {
 }
 
 .logo img {
-    width: 200px;
-    height: 200px;
-    max-width: 100%; /* Ensure image scales down if too large */
-    height: auto; /* Maintain aspect ratio */
     display: block; /* Remove extra space below image */
 }
 
@@ -131,10 +130,8 @@ body {
 
 .cta-primary,
 .cta-secondary {
-    padding: 12px 25px;
     border: none;
     border-radius: 5px;
-    font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -205,10 +202,229 @@ h1 {
     object-fit: cover; /* Ensures the video covers the entire container */
 }
 
+/* Fluid Typography System */
+.headline {
+    font-size: clamp(1.8rem, 4vw, 3rem); /* Responsive font size */
+    line-height: 1.2;
+    text-wrap: balance;
+    word-break: break-word;
+    hyphens: auto;
+}
+
+.subheader {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    line-height: 1.4;
+}
+
+.more-features-header {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+
+.feature-content h2 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.feature-content p {
+    font-size: clamp(1rem, 2vw, 1.1rem);
+}
+
+.closing-cta-section h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+}
+
+/* Responsive Logo */
+.logo img {
+    width: clamp(120px, 25vw, 200px);
+    height: clamp(120px, 25vw, 200px);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Buttons */
+.cta-primary,
+.cta-secondary {
+    padding: clamp(10px, 2vw, 12px) clamp(20px, 4vw, 25px);
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    min-height: 44px; /* Touch-friendly minimum height */
+}
+
+/* Mobile First Responsive Design */
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 15px;
+        margin-bottom: 30px;
+    }
+
+    .features-section {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .card {
+        padding: 1rem;
+        margin: 0.5rem;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .cta-primary,
+    .cta-secondary {
+        width: 100%;
+        padding: 14px 20px;
+    }
+
+    .feature-row {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+        margin-bottom: 40px;
+    }
+
+    .feature-row:nth-child(even) {
+        flex-direction: column; /* Override alternating layout on mobile */
+    }
+
+    .feature-content {
+        min-width: unset;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .feature-video-container {
+        min-width: unset;
+        max-width: 100%;
+        padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
+    }
+
+    .more-features-header {
+        margin: 40px 15px 30px 15px;
+    }
+
+    .closing-cta-section {
+        padding: 60px 15px;
+    }
+}
+
+/* Mobile (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .hero-section {
+        padding: 20px;
+    }
+
+    .features-section {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 1.5rem;
+        margin: 1rem;
+        min-width: unset;
+        flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    }
+
+    .cta-buttons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .feature-row {
+        flex-direction: column;
+        gap: 30px;
+        padding: 0 20px;
+    }
+
+    .feature-row:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .feature-content {
+        min-width: unset;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .feature-video-container {
+        min-width: unset;
+        max-width: 100%;
+    }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33.333% - 20px); /* Three cards per row */
+        min-width: unset;
+    }
+
+    .feature-row {
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .feature-row:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .feature-content {
+        min-width: 250px;
+        max-width: 400px;
+    }
+
+    .feature-video-container {
+        min-width: 250px;
+        max-width: 400px;
+    }
+}
+
+/* Performance optimizations */
+.hero-video,
+.feature-video {
+    will-change: transform; /* Optimize for animations */
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .hero-video,
+    .feature-video {
+        animation: none;
+    }
+    
+    .card::before,
+    .card::after {
+        animation: none;
+    }
+}
+
+/* Focus states for better accessibility */
+.cta-primary:focus,
+.cta-secondary:focus {
+    outline: 2px solid var(--electric-blue);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .card {
+        border: 2px solid var(--white);
+    }
+    
+    .cta-secondary {
+        border: 2px solid var(--white);
+    }
+}
+
 /* New styles for the "Multi does more" sections */
 .more-features-header {
     text-align: center;
-    font-size: 2.5em;
     margin: 60px 20px 40px 20px;
     color: var(--white);
 }
@@ -237,13 +453,11 @@ h1 {
 .feature-content h2 {
     display: flex;
     align-items: center;
-    font-size: 2em;
     color: var(--soft-gray);
     margin-bottom: 10px;
 }
 
 .feature-content p {
-    font-size: 1.1em;
     color: var(--soft-gray);
     line-height: 1.6;
 }
@@ -280,9 +494,10 @@ h1 {
 }
 
 .closing-cta-section h2 {
-    font-size: 2.8em;
     color: var(--white);
     margin-bottom: 20px;
+    text-align: center; /* Center align text */
+    width: 100%; /* Ensure it takes full width to allow text-align to work properly */
 }
 
 .closing-cta-buttons {
