@@ -265,8 +265,8 @@ h1 {
 
 /* Responsive Logo */
 .logo img {
-    width: clamp(80px, 20vw, 80px); /* Match Vercel h-20 w-auto */
-    height: clamp(80px, 20vw, 80px);
+    width: clamp(120px, 30vw, 200px); /* Much bigger logo to match site scale */
+    height: clamp(120px, 30vw, 200px);
     max-width: 100%;
     height: auto;
     margin-bottom: 1.5rem; /* Match Vercel mb-6 */
