@@ -578,12 +578,15 @@ h1 {
 .feature-content h2 {
     display: flex;
     align-items: center;
-    color: var(--soft-gray);
-    margin-bottom: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-bottom: 0.75rem;
 }
 
 .feature-content p {
-    color: var(--soft-gray);
+    color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
 }
 
