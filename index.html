@@ -22,6 +22,29 @@
 
 
 
+        <div class="credibility-banner" aria-label="Integrations credibility banner">
+            <span class="credibility-label">Integrates with</span>
+            <ul class="brand-list" role="list">
+                <li class="brand-pill" aria-label="Claude by Anthropic">
+                    <img class="brand-icon" src="https://cdn.simpleicons.org/anthropic/FFFFFF" alt="Anthropic logo">
+                    <span>Claude</span>
+                </li>
+                <li class="brand-pill" aria-label="OpenAI GPT">
+                    <img class="brand-icon" src="https://cdn.simpleicons.org/openai/FFFFFF" alt="OpenAI logo">
+                    <span>GPT</span>
+                </li>
+                <li class="brand-pill" aria-label="Google Gemini">
+                    <img class="brand-icon" src="https://cdn.simpleicons.org/googlegemini/FFFFFF" alt="Google Gemini logo">
+                    <span>Gemini</span>
+                </li>
+                <li class="brand-pill" aria-label="Grok by xAI">
+                    <img class="brand-icon" src="grok.svg" alt="Grok logo">
+                    <span>Grok</span>
+                </li>
+                <li class="brand-pill"><span>and more</span></li>
+            </ul>
+        </div>
+
         <div class="features-section">
             <div class="feature card">
                 <h1><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap h-5 w-5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Fast</h1>
@@ -112,7 +135,32 @@
             </div>
         </div>
 
-        <!-- Closing CTA -->
+        <section class="faq-section" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">FAQ</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What is Multi and how is it different from other coding assistants?</h3>
+                    <p>Multi is the first platform for you to run multiple coding agents across multiple different models and compare results side-by-side in your favorite editor.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Which models does Multi support?</h3>
+                    <p>Leading LLMs from OpenAI, Anthropic, Google, and key open-source providers. Just plug in your own API keys and let 'er rip.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can Multi integrate with my existing tools?</h3>
+                    <p>Multi plugs directly into VS Code. Others soon.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Is Multi secure?</h3>
+                    <p>Yes. It runs in isolated sandboxes with read-only repo access by default. No code leaves your environment unless you explicitly allow it.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How much does Multi cost?</h3>
+                    <p>No cost for Multi in beta. Just plug in your API keys from your favorite model provider and get going.</p>
+                </div>
+            </div>
+        </section>
+
         <div class="closing-cta-section">
             <h2>Stop talking. Start coding.</h2>
             <div class="cta-buttons">
@@ -120,10 +168,13 @@
             </div>
         </div>
         
-        <!-- Debug timestamp -->
-        <div style="text-align: center; padding: 20px; color: #666; font-size: 12px; border-top: 1px solid #333;">
-            Last updated: 2025-10-24 19:25:00 UTC
-        </div>
+        <footer class="site-footer" role="contentinfo">
+            <div class="footer-content">
+                <span>© 2025 Multi</span>
+                <span class="dot">·</span>
+                <span>Built for builders who ship</span>
+            </div>
+        </footer>
         
     <script src="script.js"></script>
 </body>
