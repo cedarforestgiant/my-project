@@ -590,11 +590,20 @@ h1 {
     white-space: nowrap;
 }
 
-.brand-icon {
-    width: 16px;
-    height: 16px;
+.brand-pill .brand-icon {
+    width: 18px;
+    height: 18px;
+    max-height: 1em; /* if the line-height changes, keep icon in check */
     display: inline-block;
-    opacity: 0.9;
+    vertical-align: middle;
+    opacity: 0.95;
+}
+
+/* Prevent unknown SVG intrinsic sizing issues */
+.brand-pill img.brand-icon[width],
+.brand-pill img.brand-icon[height] {
+    width: 18px;
+    height: 18px;
 }
 
 @media (max-width: 480px) {
