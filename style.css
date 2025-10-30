@@ -95,6 +95,12 @@ body {
     hyphens: auto; /* Allow hyphenation for better wrapping */
     text-wrap: balance; /* Better text wrapping */
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.04); /* Match Vercel shadow */
+    transition: transform 200ms ease, box-shadow 200ms ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.25);
 }
 
 .card::before {
@@ -150,6 +156,11 @@ body {
     background-color: var(--electric-blue);
     color: var(--white);
     border: 1px solid transparent;
+    box-shadow: 0 8px 24px rgba(59,130,246,0.18);
+}
+
+.cta-primary:hover {
+    box-shadow: 0 10px 28px rgba(59,130,246,0.28);
 }
 
 .cta-primary:hover {
@@ -217,6 +228,29 @@ h1 {
     margin-bottom: 40px; /* Space below the video */
 }
 
+/* Hero video scrim overlay */
+.video-container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(120% 120% at 50% 0%, rgba(0,0,0,0.35), rgba(0,0,0,0.15) 40%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+/* Bottom gradient fade to blend into next section */
+.video-container::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(11,12,16,0.6) 60%, rgba(11,12,16,1) 100%);
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .video-container::before { background: rgba(0,0,0,0.25); }
+}
+
 .hero-video {
     position: absolute;
     top: 0;
@@ -224,6 +258,7 @@ h1 {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Ensures the video covers the entire container */
+    border-radius: 10px; /* soften edges */
 }
 
 /* Fluid Typography System - Updated to match Vercel sizing */
@@ -270,6 +305,7 @@ h1 {
     max-width: 100%;
     height: auto;
     margin-bottom: 1.5rem; /* Match Vercel mb-6 */
+    filter: drop-shadow(0 6px 24px rgba(59,130,246,0.12));
 }
 
 /* Responsive Buttons */
@@ -518,6 +554,20 @@ h1 {
     will-change: transform; /* Optimize for animations */
 }
 
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
     .hero-video,
@@ -569,7 +619,7 @@ h1 {
 .brand-list {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -579,13 +629,13 @@ h1 {
 .brand-pill {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.35rem;
     border: 1px solid rgba(255, 255, 255, 0.12);
     background: rgba(255, 255, 255, 0.03);
     color: rgba(255, 255, 255, 0.75);
-    padding: 0.35rem 0.6rem;
+    padding: 0.3rem 0.55rem;
     border-radius: 9999px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     line-height: 1;
     white-space: nowrap;
 }
@@ -661,6 +711,20 @@ h1 {
     letter-spacing: -0.02em;
 }
 
+@media (max-width: 480px) {
+    .feature.card h1 {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+    .feature.card h1 {
+        justify-content: center;
+        text-align: center;
+    }
+}
+
 /* Footer */
 .site-footer {
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -677,6 +741,118 @@ h1 {
     align-items: center;
     gap: 8px;
     font-size: 0.9rem;
+}
+
+/* Features carousel */
+.features-carousel {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto 40px;
+    padding: 0 40px; /* space for nav buttons */
+}
+
+/* Desktop peek layout */
+@media (min-width: 1025px) {
+    .carousel-track { gap: 24px; }
+    .carousel-slide { flex: 0 0 92%; }
+}
+
+/* Soft edge gradient masks */
+.features-carousel::before,
+.features-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 48px;
+    pointer-events: none;
+    z-index: 2;
+}
+.features-carousel::before { left: 0; background: linear-gradient(to right, rgba(11,12,16,1), rgba(11,12,16,0)); }
+.features-carousel::after  { right: 0; background: linear-gradient(to left,  rgba(11,12,16,1), rgba(11,12,16,0)); }
+
+@media (max-width: 768px) {
+    .features-carousel::before,
+    .features-carousel::after { width: 32px; }
+}
+
+.carousel-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 0; /* slides are full width */
+    scroll-behavior: smooth;
+    scroll-padding: 0 40px; /* align with container padding */
+    z-index: 1; /* under nav but above background */
+}
+@media (max-width: 768px) {
+    .carousel-track { scroll-padding: 0 32px; }
+}
+
+/* Hide horizontal scrollbar (non-intrusive) */
+.carousel-track::-webkit-scrollbar { height: 0; }
+.carousel-track { scrollbar-width: none; }
+
+/* Pagination dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+.carousel-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.25);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+.carousel-dot[aria-current="true"] { background: rgba(255,255,255,0.8); }
+
+.carousel-slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    padding: 0 0 10px 0; /* small bottom padding to avoid cutoffs */
+}
+
+/* Reuse existing .feature-row layout within slides; remove bottom margin to avoid extra height */
+.carousel-slide.feature-row {
+    margin-bottom: 20px;
+}
+
+/* Nav buttons */
+.carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 9999px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.06);
+    color: rgba(255,255,255,0.9);
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    z-index: 3;
+}
+
+.carousel-nav:hover { background: rgba(255,255,255,0.12); }
+
+.carousel-nav.prev { left: 0; }
+.carousel-nav.next { right: 0; }
+
+@media (max-width: 768px) {
+    .features-carousel { padding: 0 32px; }
+    .carousel-nav { width: 32px; height: 32px; }
+}
+
+/* Ensure video and content scale nicely inside slides */
+.carousel-slide .feature-video-container,
+.carousel-slide .feature-content {
+    max-width: 500px;
 }
 
 /* New styles for the "Multi does more" sections */

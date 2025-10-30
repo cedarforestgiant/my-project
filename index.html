@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Multi - Your AI Software Engineer</title>
+    <title>Multi - For builders who ship</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -69,71 +69,83 @@
             </video>
         </div>
 
-        <h2 class="more-features-header">Multi does more</h2>
+        <h2 class="more-features-header" id="more-features-heading">Multi does more</h2>
 
-        <!-- Feature 1: Multi agent -->
-        <div class="feature-row">
-            <div class="feature-card-wrapper card">
-                <div class="feature-content">
-                    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-5 w-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Multi agent</h2>
-                    <p>Start multiple agents all at once.</p>
+        <section class="features-carousel" aria-labelledby="more-features-heading">
+            <button class="carousel-nav prev" aria-label="Previous" type="button">&#8249;</button>
+            <div class="carousel-track" id="features-track" role="region" aria-roledescription="carousel" aria-label="Multi does more">
+                <!-- Slide 1: Multi agent -->
+                <div class="feature-row carousel-slide">
+                    <div class="feature-card-wrapper card">
+                        <div class="feature-content">
+                            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-5 w-5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Multi agent</h2>
+                            <p>Start multiple agents all at once.</p>
+                        </div>
+                    </div>
+                    <div class="feature-video-container">
+                        <video autoplay loop muted playsinline class="feature-video" preload="metadata">
+                            <source src="feat-multiagent.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 2: Forking -->
+                <div class="feature-row carousel-slide">
+                    <div class="feature-card-wrapper card">
+                        <div class="feature-content">
+                            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork h-5 w-5"><path d="M12 3v10"/><path d="M18 7h-6"/><path d="M6 7h6"/><path d="M6 5l-2 2 2 2"/><path d="M18 5l2 2-2 2"/><circle cx="12" cy="17" r="3"/></svg> Forking</h2>
+                            <p>Branch ideas, experiment fast, don't lose conversational context.</p>
+                        </div>
+                    </div>
+                    <div class="feature-video-container">
+                        <video autoplay loop muted playsinline class="feature-video" preload="metadata">
+                            <source src="feat-forking.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 3: Any model -->
+                <div class="feature-row carousel-slide">
+                    <div class="feature-card-wrapper card">
+                        <div class="feature-content">
+                            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-5 w-5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Any model</h2>
+                            <p>Choose from dozens of providers and 100+ LLMs.</p>
+                        </div>
+                    </div>
+                    <div class="feature-video-container">
+                        <video autoplay loop muted playsinline class="feature-video" preload="metadata">
+                            <source src="feat-selection.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Snapshots & rollback -->
+                <div class="feature-row carousel-slide">
+                    <div class="feature-card-wrapper card">
+                        <div class="feature-content">
+                            <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera h-5 w-5"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg> Snapshots &shy;& rollback</h2>
+                            <p>Undo any change instantly.</p>
+                        </div>
+                    </div>
+                    <div class="feature-video-container">
+                        <video autoplay loop muted playsinline class="feature-video" preload="metadata">
+                            <source src="feat-rollback.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
                 </div>
             </div>
-            <div class="feature-video-container">
-                <video autoplay loop muted playsinline class="feature-video" preload="metadata">
-                    <source src="feat-multiagent.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+            <button class="carousel-nav next" aria-label="Next" type="button">&#8250;</button>
+            <div class="carousel-dots" role="tablist" aria-label="Carousel Pagination">
+                <button class="carousel-dot" aria-label="Slide 1" aria-current="true"></button>
+                <button class="carousel-dot" aria-label="Slide 2"></button>
+                <button class="carousel-dot" aria-label="Slide 3"></button>
+                <button class="carousel-dot" aria-label="Slide 4"></button>
             </div>
-        </div>
-
-        <!-- Feature 2: Forking -->
-        <div class="feature-row">
-            <div class="feature-card-wrapper card">
-                <div class="feature-content">
-                    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-git-fork h-5 w-5"><path d="M12 3v10"/><path d="M18 7h-6"/><path d="M6 7h6"/><path d="M6 5l-2 2 2 2"/><path d="M18 5l2 2-2 2"/><circle cx="12" cy="17" r="3"/></svg> Forking</h2>
-                    <p>Branch ideas, experiment fast, don't lose conversational context.</p>
-                </div>
-            </div>
-            <div class="feature-video-container">
-                <video autoplay loop muted playsinline class="feature-video" preload="metadata">
-                    <source src="feat-forking.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-
-        <!-- Feature 3: Any model -->
-        <div class="feature-row">
-            <div class="feature-card-wrapper card">
-                <div class="feature-content">
-                    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe h-5 w-5"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg> Any model</h2>
-                    <p>Choose from dozens of providers and 100+ LLMs.</p>
-                </div>
-            </div>
-            <div class="feature-video-container">
-                <video autoplay loop muted playsinline class="feature-video" preload="metadata">
-                    <source src="feat-selection.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-
-        <!-- Feature 4: Snapshots & rollback -->
-        <div class="feature-row">
-            <div class="feature-card-wrapper card">
-                <div class="feature-content">
-                    <h2><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-camera h-5 w-5"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path><circle cx="12" cy="13" r="3"></circle></svg> Snapshots &shy;& rollback</h2>
-                    <p>Undo any change instantly.</p>
-                </div>
-            </div>
-            <div class="feature-video-container">
-                <video autoplay loop muted playsinline class="feature-video" preload="metadata">
-                    <source src="feat-rollback.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
+        </section>
 
         <section class="faq-section" aria-labelledby="faq-heading">
             <h2 id="faq-heading">FAQ</h2>
@@ -172,10 +184,50 @@
             <div class="footer-content">
                 <span>© 2025 Multi</span>
                 <span class="dot">·</span>
-                <span>Built for builders who ship</span>
+                <span>For builders who ship</span>
             </div>
         </footer>
         
     <script src="script.js"></script>
+    <script>
+      (function(){
+        const track = document.getElementById('features-track');
+        if (!track) return;
+        const prev = document.querySelector('.features-carousel .prev');
+        const next = document.querySelector('.features-carousel .next');
+        const dots = Array.from(document.querySelectorAll('.features-carousel .carousel-dot'));
+        const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+        const total = slides.length;
+        const slideWidth = () => track.clientWidth; // viewport width per slide
+        const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
+        const getIndex = () => clamp(Math.round(track.scrollLeft / slideWidth()), 0, total - 1);
+        const setActive = (i) => {
+          dots.forEach((d, idx) => d.setAttribute('aria-current', idx === i ? 'true' : 'false'));
+        };
+        const scrollToIndex = (i) => {
+          const left = clamp(i, 0, total - 1) * slideWidth();
+          track.scrollTo({ left, behavior: 'smooth' });
+          setActive(clamp(i, 0, total - 1));
+        };
+
+        prev && prev.addEventListener('click', () => scrollToIndex(getIndex() - 1));
+        next && next.addEventListener('click', () => scrollToIndex(getIndex() + 1));
+        dots.forEach((dot, i) => dot.addEventListener('click', () => scrollToIndex(i)));
+
+        let raf = null;
+        track.addEventListener('scroll', () => {
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(() => setActive(getIndex()));
+        }, { passive: true });
+
+        window.addEventListener('resize', () => {
+          // Re-align to the nearest slide and keep the active dot in sync
+          scrollToIndex(getIndex());
+        });
+
+        // Initialize
+        setActive(0);
+      })();
+    </script>
 </body>
 </html>
